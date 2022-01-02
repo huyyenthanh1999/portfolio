@@ -3,9 +3,9 @@ import PortfolioList from "../portfolioList/PortfolioList"
 import { 
     featuredPortfolio,
     webPortfolio,
-    mobilePortfolio,
-    designPortfolio,
-    contentPortfolio    
+    // mobilePortfolio,
+    // designPortfolio,
+    // contentPortfolio    
     } from "../../data"
 import "./portfolio.scss"
 
@@ -22,18 +22,18 @@ export default function Portfolio() {
             id: "web",
             title: "Web"
         },
-        {
-            id: "mobile",
-            title: "Mobile App"
-        },
-        {
-            id: "design",
-            title: "Design"
-        },
-        {
-            id: "content",
-            title: "Content"
-        }
+        // {
+        //     id: "mobile",
+        //     title: "Mobile App"
+        // },
+        // {
+        //     id: "design",
+        //     title: "Design"
+        // },
+        // {
+        //     id: "content",
+        //     title: "Content"
+        // }
     ]
 
     useEffect(() => {
@@ -44,15 +44,15 @@ export default function Portfolio() {
             case "web":
                 setData(webPortfolio);
                 break;
-            case "mobile":
-                setData(mobilePortfolio);
-                break;
-            case "design":
-                setData(designPortfolio);
-                break;
-            case "content":
-                setData(contentPortfolio);
-                break;
+            // case "mobile":
+            //     setData(mobilePortfolio);
+            //     break;
+            // case "design":
+            //     setData(designPortfolio);
+            //     break;
+            // case "content":
+            //     setData(contentPortfolio);
+            //     break;
             default:
         }
     },[selected])
@@ -73,10 +73,10 @@ export default function Portfolio() {
             </ul>
             <div className="container">
                 {data.map((item) => (
-                    <div className="item" key={item.id}>
+                    <a href={item.link} className="item" key={item.id}>
                         <img src={item.img} alt="" />
                         <h3>{item.title}</h3>
-                    </div>
+                    </a>
                 ))}
             </div>
         </div>
